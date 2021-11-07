@@ -41,9 +41,9 @@ const calculateDueDate = (inputDate, turnaroundTime) => {
   nextDate.setDate(input.getDate() + 1);
   nextDate.setHours(startWorkHour);
   if (weekendDays.includes(nextDate.getDay())) {
-    const skipDays = nextDate.getDay() === 6 ? 3 : 2;
+    const skipDays = nextDate.getDay() === 6 ? 2 : 1;
 
-    nextDate.setDate(input.getDate() + skipDays);
+    nextDate.setDate(nextDate.getDate() + skipDays);
   }
 
   return dateString(calculateDueDate(nextDate, nextTurnaroundTime));
